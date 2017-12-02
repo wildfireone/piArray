@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for ip in 192.168.1.{11..47}; do
+  echo "looking at $ip"
+  ssh ubuntu@$ip 'git clone https://github.com/wildfireone/piArray && cd piarray &&  bash setup.sh'
+done
