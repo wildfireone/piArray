@@ -10,8 +10,9 @@ const requestHandler = (request, response) => {
   console.log(request.url)
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
-  console.log(query);
+
   var lst = query["message"];
+  console.log(query);
   sense.sync.showMessage(lst, t / 10);
   sleep(t);
 
