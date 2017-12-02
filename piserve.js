@@ -48,9 +48,9 @@ const requestHandler = (request, response) => {
     sense.sync.showMessage(lst, t / 10);
     sleep(t);
   } else if (query["type"] == "colour") {
-let r = parseInt(query["r"]);
-let g = parseInt(query["g"]);
-let b = parseInt(query["b"]);
+    let r = parseInt(query["r"]);
+    let g = parseInt(query["g"]);
+    let b = parseInt(query["b"]);
     var col = [r,g,b];
     var localarray = [
       col, col, col, col, col, col, col, col,
