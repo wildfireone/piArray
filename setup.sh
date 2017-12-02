@@ -4,4 +4,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 nvm install 8.9.1
 sudo apt-get update
-sudo apt-get install -y python-minimal build-essential npm
+sudo apt-get install -y python-minimal build-essential
+npm install
+npm install -g forever
+forever piserve.js
