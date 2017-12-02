@@ -8,7 +8,7 @@ makeRequest('127.0.0.1', "type=blue");
 
 
 function makeRequest(ip, args){
-  https.get('https://'+ip+':3000?'+args, (resp) => {
+  https.get('http://'+ip+':3000?'+args, (resp) => {
     let data = '';
 
     // A chunk of data has been recieved.
