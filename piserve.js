@@ -5,6 +5,7 @@ var url = require('url');
 'use strict';
 const assert = require('assert');
 const sense = require('sense-hat-led');
+const sleep = sense.sync.sleep;
 
 const requestHandler = (request, response) => {
   console.log(request.url)
