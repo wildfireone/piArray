@@ -64,6 +64,52 @@ const requestHandler = (request, response) => {
     ];
 sense.setPixels(localarray);
 
+  }
+  else if (query["type"] == "red") {
+
+    var col = [255,0,0];
+    var localarray = [
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+    ];
+sense.setPixels(localarray);
+
+  }
+  else if (query["type"] == "green") {
+    var col = [0,255,0];
+    var localarray = [
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+    ];
+sense.setPixels(localarray);
+
+  }
+  else if (query["type"] == "blue") {
+    var col = [0,0,255];
+    var localarray = [
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+    ];
+sense.setPixels(localarray);
+
   } else if (query["type"] == "on") {
     sense.sync.setPixels(on);
   } else {
