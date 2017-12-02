@@ -1,9 +1,24 @@
 var http = require('http');
 
+var queue = [];
+var current = 0;
+var delay = 0.5;
+queueRequest('127.0.0.1', "type=red");
+queueRequest('127.0.0.1', "type=green");
+queueRequest('127.0.0.1', "type=blue");
 
-makeRequest('127.0.0.1', "type=red");
-makeRequest('127.0.0.1', "type=green");
-makeRequest('127.0.0.1', "type=blue");
+doRequests();
+
+function doRequests(){
+    makeRequest(queue[current]["ip"],queue[current]["args"] )
+
+}
+
+
+function queueRequest(ip, args){
+var req = {"ip" :ip, "args":args };
+queue.push(req);
+}
 
 
 
@@ -19,6 +34,8 @@ function makeRequest(ip, args){
     // The whole response has been received. Print out the result.
     resp.on('end', () => {
       console.log('done to '+ip);
+      current = current+1;
+      setTimeout(doRequest, delay * 1000);
     });
 
   }).on("error", (err) => {
