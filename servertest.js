@@ -7,9 +7,9 @@ queueRequest('127.0.0.1', "type=red");
 queueRequest('127.0.0.1', "type=green");
 queueRequest('127.0.0.1', "type=blue");
 
-doRequests();
+doRequest();
 
-function doRequests(){
+function doRequest(){
     makeRequest(queue[current]["ip"],queue[current]["args"] )
 
 }
