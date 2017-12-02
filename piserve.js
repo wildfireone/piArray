@@ -46,7 +46,7 @@ const requestHandler = (request, response) => {
     sense.sync.showMessage(lst, t / 10);
     sleep(t);
   }
-  else if(query["type"]=="on"){{
+  else if(query["type"]=="on"){
     sense.sync.setPixels(on);
   }
   else{
