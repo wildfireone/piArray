@@ -35,7 +35,9 @@ function makeRequest(ip, args){
     resp.on('end', () => {
       console.log('done to '+ip);
       current = current+1;
+      if(current<queue.length){
       setTimeout(doRequest, delay * 1000);
+    }
     });
 
   }).on("error", (err) => {
