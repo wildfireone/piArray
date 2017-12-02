@@ -8,7 +8,7 @@ const requestHandler = (request, response) => {
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
   console.log(query);
-  response.end('Hello Node.js Server!')
+  response.end('Shrapp pap pap!')
 }
 
 const server = http.createServer(requestHandler)
