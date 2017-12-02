@@ -2,12 +2,20 @@
 const http = require('http')
 const port = 3000
 var url = require('url');
+'use strict';
+const assert = require('assert');
+const sense = require('sense-hat-led');
 
 const requestHandler = (request, response) => {
   console.log(request.url)
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
   console.log(query);
+  var lst = query["message"];
+  sense.sync.showMessage(lst, t / 10);
+  sleep(t);
+
+
   response.end('Shrapp pap pap!')
 }
 
