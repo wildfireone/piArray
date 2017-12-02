@@ -12,7 +12,7 @@ const requestHandler = (request, response) => {
   var query = url_parts.query;
 
   var lst = query["message"];
-  console.log(query);
+  console.log(lst);
   sense.sync.showMessage(lst, t / 10);
   sleep(t);
 
