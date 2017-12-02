@@ -1,6 +1,6 @@
 // content of index.js
 const http = require('http')
-const port = 3000
+const port = 8080
 var url = require('url');
 
 const requestHandler = (request, response) => {
