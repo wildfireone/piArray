@@ -37,19 +37,24 @@ const requestHandler = (request, response) => {
   console.log(request.url)
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
-  if(query["type"]=="msg"){
-    let t = parseInt(query["t"]) ;
+  if (query["type"] == "msg") {
+    let t = parseInt(query["t"]);
     var lst = query["msg"];
     console.log(query);
     console.log(lst);
     console.log(t);
     sense.sync.showMessage(lst, t / 10);
     sleep(t);
-  }
-  else if(query["type"]=="on"){
+  } else if (query["type"] == "wave") {
+    for (let y = 0; y < 8; y++) {
+      for (let x = 0; x < 8; x++) {
+        sense.sync.setPixel(x, y, [248 - (x * 32), 248 - (y * 32), 248 - (x + y) * 16]);
+      }
+    }
+
+  } else if (query["type"] == "on") {
     sense.sync.setPixels(on);
-  }
-  else{
+  } else {
     sense.sync.setPixels(off);
   }
 
