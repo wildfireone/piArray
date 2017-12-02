@@ -62,7 +62,7 @@ const requestHandler = (request, response) => {
       col, col, col, col, col, col, col, col,
       col, col, col, col, col, col, col, col,
     ];
-
+ense.setPixels(localarray);
 
   } else if (query["type"] == "on") {
     sense.sync.setPixels(on);
