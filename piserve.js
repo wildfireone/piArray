@@ -21,6 +21,8 @@ const on = [
   B, B, B, B, B, B, B, B,
 ];
 
+
+
 const off = [
   0, 0, 0, 0, 0, 0, 0, 0,
   0, 0, 0, 0, 0, 0, 0, 0,
@@ -45,17 +47,27 @@ const requestHandler = (request, response) => {
     console.log(t);
     sense.sync.showMessage(lst, t / 10);
     sleep(t);
-  } else if (query["type"] == "wave") {
-    for (let y = 0; y < 8; y++) {
-      for (let x = 0; x < 8; x++) {
-        sense.sync.setPixel(x, y, [248 - (x * 32), 248 - (y * 32), 248 - (x + y) * 16]);
-      }
-    }
+  } else if (query["type"] == "colour") {
+let r = parseInt(query["r"]);
+let g = parseInt(query["g"]);
+let b = parseInt(query["b"]);
+    var col = [r,g,b];
+    var localarray = [
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+      col, col, col, col, col, col, col, col,
+    ];
+
 
   } else if (query["type"] == "on") {
     sense.sync.setPixels(on);
   } else {
-    sense.sync.setPixels(off);
+    sense.sync.clear();
   }
 
 
