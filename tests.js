@@ -5,7 +5,7 @@ const sense = require('sense-hat-led');
 const sleep = sense.sync.sleep;
 
 const X = [248, 248, 248]; // black
-const O = [0, 0, 0]; // White
+const O = [0, 0, 0]; // White test
 
 const arrow = [
   O, O, O, O, X, O, O, O,
